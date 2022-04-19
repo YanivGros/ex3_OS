@@ -1,0 +1,3 @@
+/home/yaniv123/home/ClionProj/ex3_OS/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+/home/yaniv123/home/ClionProj/ex3_OS/cmake-build-debug/CMakeFiles/edit_cache.dir
+/home/yaniv123/home/ClionProj/ex3_OS/cmake-build-debug/CMakeFiles/ex3_OS.dir
