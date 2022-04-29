@@ -57,30 +57,45 @@ include CMakeFiles/ex3_OS.dir/progress.make
 # Include the compile flags for this target's objects.
 include CMakeFiles/ex3_OS.dir/flags.make
 
-CMakeFiles/ex3_OS.dir/main.cpp.o: CMakeFiles/ex3_OS.dir/flags.make
-CMakeFiles/ex3_OS.dir/main.cpp.o: ../main.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/yaniv123/home/ClionProj/ex3_OS/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/ex3_OS.dir/main.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/ex3_OS.dir/main.cpp.o -c /home/yaniv123/home/ClionProj/ex3_OS/main.cpp
+CMakeFiles/ex3_OS.dir/Atomic/atomicdemo.cpp.o: CMakeFiles/ex3_OS.dir/flags.make
+CMakeFiles/ex3_OS.dir/Atomic/atomicdemo.cpp.o: ../Atomic/atomicdemo.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/yaniv123/home/ClionProj/ex3_OS/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/ex3_OS.dir/Atomic/atomicdemo.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/ex3_OS.dir/Atomic/atomicdemo.cpp.o -c /home/yaniv123/home/ClionProj/ex3_OS/Atomic/atomicdemo.cpp
 
-CMakeFiles/ex3_OS.dir/main.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/ex3_OS.dir/main.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/yaniv123/home/ClionProj/ex3_OS/main.cpp > CMakeFiles/ex3_OS.dir/main.cpp.i
+CMakeFiles/ex3_OS.dir/Atomic/atomicdemo.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/ex3_OS.dir/Atomic/atomicdemo.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/yaniv123/home/ClionProj/ex3_OS/Atomic/atomicdemo.cpp > CMakeFiles/ex3_OS.dir/Atomic/atomicdemo.cpp.i
 
-CMakeFiles/ex3_OS.dir/main.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/ex3_OS.dir/main.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/yaniv123/home/ClionProj/ex3_OS/main.cpp -o CMakeFiles/ex3_OS.dir/main.cpp.s
+CMakeFiles/ex3_OS.dir/Atomic/atomicdemo.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/ex3_OS.dir/Atomic/atomicdemo.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/yaniv123/home/ClionProj/ex3_OS/Atomic/atomicdemo.cpp -o CMakeFiles/ex3_OS.dir/Atomic/atomicdemo.cpp.s
+
+CMakeFiles/ex3_OS.dir/MapReduceFramework.cpp.o: CMakeFiles/ex3_OS.dir/flags.make
+CMakeFiles/ex3_OS.dir/MapReduceFramework.cpp.o: ../MapReduceFramework.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/yaniv123/home/ClionProj/ex3_OS/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/ex3_OS.dir/MapReduceFramework.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/ex3_OS.dir/MapReduceFramework.cpp.o -c /home/yaniv123/home/ClionProj/ex3_OS/MapReduceFramework.cpp
+
+CMakeFiles/ex3_OS.dir/MapReduceFramework.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/ex3_OS.dir/MapReduceFramework.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/yaniv123/home/ClionProj/ex3_OS/MapReduceFramework.cpp > CMakeFiles/ex3_OS.dir/MapReduceFramework.cpp.i
+
+CMakeFiles/ex3_OS.dir/MapReduceFramework.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/ex3_OS.dir/MapReduceFramework.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/yaniv123/home/ClionProj/ex3_OS/MapReduceFramework.cpp -o CMakeFiles/ex3_OS.dir/MapReduceFramework.cpp.s
 
 # Object files for target ex3_OS
 ex3_OS_OBJECTS = \
-"CMakeFiles/ex3_OS.dir/main.cpp.o"
+"CMakeFiles/ex3_OS.dir/Atomic/atomicdemo.cpp.o" \
+"CMakeFiles/ex3_OS.dir/MapReduceFramework.cpp.o"
 
 # External object files for target ex3_OS
 ex3_OS_EXTERNAL_OBJECTS =
 
-ex3_OS: CMakeFiles/ex3_OS.dir/main.cpp.o
+ex3_OS: CMakeFiles/ex3_OS.dir/Atomic/atomicdemo.cpp.o
+ex3_OS: CMakeFiles/ex3_OS.dir/MapReduceFramework.cpp.o
 ex3_OS: CMakeFiles/ex3_OS.dir/build.make
 ex3_OS: CMakeFiles/ex3_OS.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/yaniv123/home/ClionProj/ex3_OS/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX executable ex3_OS"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/yaniv123/home/ClionProj/ex3_OS/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Linking CXX executable ex3_OS"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/ex3_OS.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

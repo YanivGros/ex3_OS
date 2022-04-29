@@ -1,3 +1,6 @@
 /home/yaniv123/home/ClionProj/ex3_OS/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+/home/yaniv123/home/ClionProj/ex3_OS/cmake-build-debug/CMakeFiles/ex3_OS_3.dir
 /home/yaniv123/home/ClionProj/ex3_OS/cmake-build-debug/CMakeFiles/edit_cache.dir
+/home/yaniv123/home/ClionProj/ex3_OS/cmake-build-debug/CMakeFiles/ex3_OS_Barrier.dir
+/home/yaniv123/home/ClionProj/ex3_OS/cmake-build-debug/CMakeFiles/ex3_OS_1.dir
 /home/yaniv123/home/ClionProj/ex3_OS/cmake-build-debug/CMakeFiles/ex3_OS.dir

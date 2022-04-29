@@ -49,6 +49,7 @@ int main(int argc, char** argv)
     // Note that 0b is in the standard only from c++14
     /* printf("atomic counter first 16 bit: %d\n", atomic_counter.load() & (0b1111111111111111)); */
     printf("atomic counter first 16 bit: %d\n", atomic_counter.load() & (0xffff));
+    printf("atomic counter first 16 bit: %d\n", atomic_counter.load());
     printf("atomic counter next 15 bit: %d\n", atomic_counter.load()>>16 & (0x7fff));
     printf("atomic counter last 2 bit: %d\n", atomic_counter.load()>>30);
     

@@ -111,6 +111,45 @@ depend:
 .PHONY : depend
 
 #=============================================================================
+# Target rules for targets named ex3_OS_3
+
+# Build rule for target.
+ex3_OS_3: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 ex3_OS_3
+.PHONY : ex3_OS_3
+
+# fast build rule for target.
+ex3_OS_3/fast:
+	$(MAKE) -f CMakeFiles/ex3_OS_3.dir/build.make CMakeFiles/ex3_OS_3.dir/build
+.PHONY : ex3_OS_3/fast
+
+#=============================================================================
+# Target rules for targets named ex3_OS_Barrier
+
+# Build rule for target.
+ex3_OS_Barrier: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 ex3_OS_Barrier
+.PHONY : ex3_OS_Barrier
+
+# fast build rule for target.
+ex3_OS_Barrier/fast:
+	$(MAKE) -f CMakeFiles/ex3_OS_Barrier.dir/build.make CMakeFiles/ex3_OS_Barrier.dir/build
+.PHONY : ex3_OS_Barrier/fast
+
+#=============================================================================
+# Target rules for targets named ex3_OS_1
+
+# Build rule for target.
+ex3_OS_1: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 ex3_OS_1
+.PHONY : ex3_OS_1
+
+# fast build rule for target.
+ex3_OS_1/fast:
+	$(MAKE) -f CMakeFiles/ex3_OS_1.dir/build.make CMakeFiles/ex3_OS_1.dir/build
+.PHONY : ex3_OS_1/fast
+
+#=============================================================================
 # Target rules for targets named ex3_OS
 
 # Build rule for target.
@@ -123,32 +162,167 @@ ex3_OS/fast:
 	$(MAKE) -f CMakeFiles/ex3_OS.dir/build.make CMakeFiles/ex3_OS.dir/build
 .PHONY : ex3_OS/fast
 
-main.o: main.cpp.o
+Atomic/atomicdemo.o: Atomic/atomicdemo.cpp.o
 
-.PHONY : main.o
+.PHONY : Atomic/atomicdemo.o
 
 # target to build an object file
-main.cpp.o:
-	$(MAKE) -f CMakeFiles/ex3_OS.dir/build.make CMakeFiles/ex3_OS.dir/main.cpp.o
-.PHONY : main.cpp.o
+Atomic/atomicdemo.cpp.o:
+	$(MAKE) -f CMakeFiles/ex3_OS.dir/build.make CMakeFiles/ex3_OS.dir/Atomic/atomicdemo.cpp.o
+.PHONY : Atomic/atomicdemo.cpp.o
 
-main.i: main.cpp.i
+Atomic/atomicdemo.i: Atomic/atomicdemo.cpp.i
 
-.PHONY : main.i
+.PHONY : Atomic/atomicdemo.i
 
 # target to preprocess a source file
-main.cpp.i:
-	$(MAKE) -f CMakeFiles/ex3_OS.dir/build.make CMakeFiles/ex3_OS.dir/main.cpp.i
-.PHONY : main.cpp.i
+Atomic/atomicdemo.cpp.i:
+	$(MAKE) -f CMakeFiles/ex3_OS.dir/build.make CMakeFiles/ex3_OS.dir/Atomic/atomicdemo.cpp.i
+.PHONY : Atomic/atomicdemo.cpp.i
 
-main.s: main.cpp.s
+Atomic/atomicdemo.s: Atomic/atomicdemo.cpp.s
 
-.PHONY : main.s
+.PHONY : Atomic/atomicdemo.s
 
 # target to generate assembly for a file
-main.cpp.s:
-	$(MAKE) -f CMakeFiles/ex3_OS.dir/build.make CMakeFiles/ex3_OS.dir/main.cpp.s
-.PHONY : main.cpp.s
+Atomic/atomicdemo.cpp.s:
+	$(MAKE) -f CMakeFiles/ex3_OS.dir/build.make CMakeFiles/ex3_OS.dir/Atomic/atomicdemo.cpp.s
+.PHONY : Atomic/atomicdemo.cpp.s
+
+Atomic/atomicdemo_multivar.o: Atomic/atomicdemo_multivar.cpp.o
+
+.PHONY : Atomic/atomicdemo_multivar.o
+
+# target to build an object file
+Atomic/atomicdemo_multivar.cpp.o:
+	$(MAKE) -f CMakeFiles/ex3_OS_1.dir/build.make CMakeFiles/ex3_OS_1.dir/Atomic/atomicdemo_multivar.cpp.o
+.PHONY : Atomic/atomicdemo_multivar.cpp.o
+
+Atomic/atomicdemo_multivar.i: Atomic/atomicdemo_multivar.cpp.i
+
+.PHONY : Atomic/atomicdemo_multivar.i
+
+# target to preprocess a source file
+Atomic/atomicdemo_multivar.cpp.i:
+	$(MAKE) -f CMakeFiles/ex3_OS_1.dir/build.make CMakeFiles/ex3_OS_1.dir/Atomic/atomicdemo_multivar.cpp.i
+.PHONY : Atomic/atomicdemo_multivar.cpp.i
+
+Atomic/atomicdemo_multivar.s: Atomic/atomicdemo_multivar.cpp.s
+
+.PHONY : Atomic/atomicdemo_multivar.s
+
+# target to generate assembly for a file
+Atomic/atomicdemo_multivar.cpp.s:
+	$(MAKE) -f CMakeFiles/ex3_OS_1.dir/build.make CMakeFiles/ex3_OS_1.dir/Atomic/atomicdemo_multivar.cpp.s
+.PHONY : Atomic/atomicdemo_multivar.cpp.s
+
+Barrier/Barrier.o: Barrier/Barrier.cpp.o
+
+.PHONY : Barrier/Barrier.o
+
+# target to build an object file
+Barrier/Barrier.cpp.o:
+	$(MAKE) -f CMakeFiles/ex3_OS_Barrier.dir/build.make CMakeFiles/ex3_OS_Barrier.dir/Barrier/Barrier.cpp.o
+.PHONY : Barrier/Barrier.cpp.o
+
+Barrier/Barrier.i: Barrier/Barrier.cpp.i
+
+.PHONY : Barrier/Barrier.i
+
+# target to preprocess a source file
+Barrier/Barrier.cpp.i:
+	$(MAKE) -f CMakeFiles/ex3_OS_Barrier.dir/build.make CMakeFiles/ex3_OS_Barrier.dir/Barrier/Barrier.cpp.i
+.PHONY : Barrier/Barrier.cpp.i
+
+Barrier/Barrier.s: Barrier/Barrier.cpp.s
+
+.PHONY : Barrier/Barrier.s
+
+# target to generate assembly for a file
+Barrier/Barrier.cpp.s:
+	$(MAKE) -f CMakeFiles/ex3_OS_Barrier.dir/build.make CMakeFiles/ex3_OS_Barrier.dir/Barrier/Barrier.cpp.s
+.PHONY : Barrier/Barrier.cpp.s
+
+Barrier/barrierdemo.o: Barrier/barrierdemo.cpp.o
+
+.PHONY : Barrier/barrierdemo.o
+
+# target to build an object file
+Barrier/barrierdemo.cpp.o:
+	$(MAKE) -f CMakeFiles/ex3_OS_Barrier.dir/build.make CMakeFiles/ex3_OS_Barrier.dir/Barrier/barrierdemo.cpp.o
+.PHONY : Barrier/barrierdemo.cpp.o
+
+Barrier/barrierdemo.i: Barrier/barrierdemo.cpp.i
+
+.PHONY : Barrier/barrierdemo.i
+
+# target to preprocess a source file
+Barrier/barrierdemo.cpp.i:
+	$(MAKE) -f CMakeFiles/ex3_OS_Barrier.dir/build.make CMakeFiles/ex3_OS_Barrier.dir/Barrier/barrierdemo.cpp.i
+.PHONY : Barrier/barrierdemo.cpp.i
+
+Barrier/barrierdemo.s: Barrier/barrierdemo.cpp.s
+
+.PHONY : Barrier/barrierdemo.s
+
+# target to generate assembly for a file
+Barrier/barrierdemo.cpp.s:
+	$(MAKE) -f CMakeFiles/ex3_OS_Barrier.dir/build.make CMakeFiles/ex3_OS_Barrier.dir/Barrier/barrierdemo.cpp.s
+.PHONY : Barrier/barrierdemo.cpp.s
+
+MapReduceFramework.o: MapReduceFramework.cpp.o
+
+.PHONY : MapReduceFramework.o
+
+# target to build an object file
+MapReduceFramework.cpp.o:
+	$(MAKE) -f CMakeFiles/ex3_OS.dir/build.make CMakeFiles/ex3_OS.dir/MapReduceFramework.cpp.o
+.PHONY : MapReduceFramework.cpp.o
+
+MapReduceFramework.i: MapReduceFramework.cpp.i
+
+.PHONY : MapReduceFramework.i
+
+# target to preprocess a source file
+MapReduceFramework.cpp.i:
+	$(MAKE) -f CMakeFiles/ex3_OS.dir/build.make CMakeFiles/ex3_OS.dir/MapReduceFramework.cpp.i
+.PHONY : MapReduceFramework.cpp.i
+
+MapReduceFramework.s: MapReduceFramework.cpp.s
+
+.PHONY : MapReduceFramework.s
+
+# target to generate assembly for a file
+MapReduceFramework.cpp.s:
+	$(MAKE) -f CMakeFiles/ex3_OS.dir/build.make CMakeFiles/ex3_OS.dir/MapReduceFramework.cpp.s
+.PHONY : MapReduceFramework.cpp.s
+
+SampleClient/SampleClient.o: SampleClient/SampleClient.cpp.o
+
+.PHONY : SampleClient/SampleClient.o
+
+# target to build an object file
+SampleClient/SampleClient.cpp.o:
+	$(MAKE) -f CMakeFiles/ex3_OS_3.dir/build.make CMakeFiles/ex3_OS_3.dir/SampleClient/SampleClient.cpp.o
+.PHONY : SampleClient/SampleClient.cpp.o
+
+SampleClient/SampleClient.i: SampleClient/SampleClient.cpp.i
+
+.PHONY : SampleClient/SampleClient.i
+
+# target to preprocess a source file
+SampleClient/SampleClient.cpp.i:
+	$(MAKE) -f CMakeFiles/ex3_OS_3.dir/build.make CMakeFiles/ex3_OS_3.dir/SampleClient/SampleClient.cpp.i
+.PHONY : SampleClient/SampleClient.cpp.i
+
+SampleClient/SampleClient.s: SampleClient/SampleClient.cpp.s
+
+.PHONY : SampleClient/SampleClient.s
+
+# target to generate assembly for a file
+SampleClient/SampleClient.cpp.s:
+	$(MAKE) -f CMakeFiles/ex3_OS_3.dir/build.make CMakeFiles/ex3_OS_3.dir/SampleClient/SampleClient.cpp.s
+.PHONY : SampleClient/SampleClient.cpp.s
 
 # Help Target
 help:
@@ -157,11 +331,29 @@ help:
 	@echo "... clean"
 	@echo "... depend"
 	@echo "... rebuild_cache"
+	@echo "... ex3_OS_3"
 	@echo "... edit_cache"
+	@echo "... ex3_OS_Barrier"
+	@echo "... ex3_OS_1"
 	@echo "... ex3_OS"
-	@echo "... main.o"
-	@echo "... main.i"
-	@echo "... main.s"
+	@echo "... Atomic/atomicdemo.o"
+	@echo "... Atomic/atomicdemo.i"
+	@echo "... Atomic/atomicdemo.s"
+	@echo "... Atomic/atomicdemo_multivar.o"
+	@echo "... Atomic/atomicdemo_multivar.i"
+	@echo "... Atomic/atomicdemo_multivar.s"
+	@echo "... Barrier/Barrier.o"
+	@echo "... Barrier/Barrier.i"
+	@echo "... Barrier/Barrier.s"
+	@echo "... Barrier/barrierdemo.o"
+	@echo "... Barrier/barrierdemo.i"
+	@echo "... Barrier/barrierdemo.s"
+	@echo "... MapReduceFramework.o"
+	@echo "... MapReduceFramework.i"
+	@echo "... MapReduceFramework.s"
+	@echo "... SampleClient/SampleClient.o"
+	@echo "... SampleClient/SampleClient.i"
+	@echo "... SampleClient/SampleClient.s"
 .PHONY : help
 
 

@@ -4,7 +4,8 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "/home/yaniv123/home/ClionProj/ex3_OS/main.cpp" "/home/yaniv123/home/ClionProj/ex3_OS/cmake-build-debug/CMakeFiles/ex3_OS.dir/main.cpp.o"
+  "/home/yaniv123/home/ClionProj/ex3_OS/Atomic/atomicdemo.cpp" "/home/yaniv123/home/ClionProj/ex3_OS/cmake-build-debug/CMakeFiles/ex3_OS.dir/Atomic/atomicdemo.cpp.o"
+  "/home/yaniv123/home/ClionProj/ex3_OS/MapReduceFramework.cpp" "/home/yaniv123/home/ClionProj/ex3_OS/cmake-build-debug/CMakeFiles/ex3_OS.dir/MapReduceFramework.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
 

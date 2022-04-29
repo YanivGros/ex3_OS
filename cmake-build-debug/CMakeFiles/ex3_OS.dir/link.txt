@@ -1,1 +1,1 @@
-/usr/bin/c++  -g   CMakeFiles/ex3_OS.dir/main.cpp.o  -o ex3_OS 
+/usr/bin/c++  -pthread -g   CMakeFiles/ex3_OS.dir/Atomic/atomicdemo.cpp.o CMakeFiles/ex3_OS.dir/MapReduceFramework.cpp.o  -o ex3_OS 

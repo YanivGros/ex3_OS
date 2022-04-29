@@ -4,9 +4,15 @@
 
 #define MT_LEVEL 5
 
+class B {
+    int a;
+public:
+    B(int a) : a(a) {}
+};
 struct ThreadContext {
 	int threadID;
-	Barrier* barrier;
+    Barrier *barrier;
+    B &b;
 };
 
 
@@ -14,7 +20,7 @@ void* foo(void* arg)
 {
 	ThreadContext* tc = (ThreadContext*) arg;
 	printf("Before barriers: %d\n", tc->threadID);
-
+    tc
 	tc->barrier->barrier();
 
 	printf("Between barriers: %d\n", tc->threadID);

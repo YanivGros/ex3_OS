@@ -1,5 +1,6 @@
 file(REMOVE_RECURSE
-  "CMakeFiles/ex3_OS.dir/main.cpp.o"
+  "CMakeFiles/ex3_OS.dir/Atomic/atomicdemo.cpp.o"
+  "CMakeFiles/ex3_OS.dir/MapReduceFramework.cpp.o"
   "ex3_OS"
   "ex3_OS.pdb"
 )

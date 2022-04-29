@@ -53,6 +53,9 @@ CMAKE_BINARY_DIR = /home/yaniv123/home/ClionProj/ex3_OS/cmake-build-debug
 # Directory level rules for the build root directory
 
 # The main recursive "all" target.
+all: CMakeFiles/ex3_OS_3.dir/all
+all: CMakeFiles/ex3_OS_Barrier.dir/all
+all: CMakeFiles/ex3_OS_1.dir/all
 all: CMakeFiles/ex3_OS.dir/all
 
 .PHONY : all
@@ -63,9 +66,93 @@ preinstall:
 .PHONY : preinstall
 
 # The main recursive "clean" target.
+clean: CMakeFiles/ex3_OS_3.dir/clean
+clean: CMakeFiles/ex3_OS_Barrier.dir/clean
+clean: CMakeFiles/ex3_OS_1.dir/clean
 clean: CMakeFiles/ex3_OS.dir/clean
 
 .PHONY : clean
+
+#=============================================================================
+# Target rules for target CMakeFiles/ex3_OS_3.dir
+
+# All Build rule for target.
+CMakeFiles/ex3_OS_3.dir/all:
+	$(MAKE) -f CMakeFiles/ex3_OS_3.dir/build.make CMakeFiles/ex3_OS_3.dir/depend
+	$(MAKE) -f CMakeFiles/ex3_OS_3.dir/build.make CMakeFiles/ex3_OS_3.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/yaniv123/home/ClionProj/ex3_OS/cmake-build-debug/CMakeFiles --progress-num=6,7 "Built target ex3_OS_3"
+.PHONY : CMakeFiles/ex3_OS_3.dir/all
+
+# Build rule for subdir invocation for target.
+CMakeFiles/ex3_OS_3.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/yaniv123/home/ClionProj/ex3_OS/cmake-build-debug/CMakeFiles 2
+	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/ex3_OS_3.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/yaniv123/home/ClionProj/ex3_OS/cmake-build-debug/CMakeFiles 0
+.PHONY : CMakeFiles/ex3_OS_3.dir/rule
+
+# Convenience name for target.
+ex3_OS_3: CMakeFiles/ex3_OS_3.dir/rule
+
+.PHONY : ex3_OS_3
+
+# clean rule for target.
+CMakeFiles/ex3_OS_3.dir/clean:
+	$(MAKE) -f CMakeFiles/ex3_OS_3.dir/build.make CMakeFiles/ex3_OS_3.dir/clean
+.PHONY : CMakeFiles/ex3_OS_3.dir/clean
+
+#=============================================================================
+# Target rules for target CMakeFiles/ex3_OS_Barrier.dir
+
+# All Build rule for target.
+CMakeFiles/ex3_OS_Barrier.dir/all:
+	$(MAKE) -f CMakeFiles/ex3_OS_Barrier.dir/build.make CMakeFiles/ex3_OS_Barrier.dir/depend
+	$(MAKE) -f CMakeFiles/ex3_OS_Barrier.dir/build.make CMakeFiles/ex3_OS_Barrier.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/yaniv123/home/ClionProj/ex3_OS/cmake-build-debug/CMakeFiles --progress-num=8,9,10 "Built target ex3_OS_Barrier"
+.PHONY : CMakeFiles/ex3_OS_Barrier.dir/all
+
+# Build rule for subdir invocation for target.
+CMakeFiles/ex3_OS_Barrier.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/yaniv123/home/ClionProj/ex3_OS/cmake-build-debug/CMakeFiles 3
+	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/ex3_OS_Barrier.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/yaniv123/home/ClionProj/ex3_OS/cmake-build-debug/CMakeFiles 0
+.PHONY : CMakeFiles/ex3_OS_Barrier.dir/rule
+
+# Convenience name for target.
+ex3_OS_Barrier: CMakeFiles/ex3_OS_Barrier.dir/rule
+
+.PHONY : ex3_OS_Barrier
+
+# clean rule for target.
+CMakeFiles/ex3_OS_Barrier.dir/clean:
+	$(MAKE) -f CMakeFiles/ex3_OS_Barrier.dir/build.make CMakeFiles/ex3_OS_Barrier.dir/clean
+.PHONY : CMakeFiles/ex3_OS_Barrier.dir/clean
+
+#=============================================================================
+# Target rules for target CMakeFiles/ex3_OS_1.dir
+
+# All Build rule for target.
+CMakeFiles/ex3_OS_1.dir/all:
+	$(MAKE) -f CMakeFiles/ex3_OS_1.dir/build.make CMakeFiles/ex3_OS_1.dir/depend
+	$(MAKE) -f CMakeFiles/ex3_OS_1.dir/build.make CMakeFiles/ex3_OS_1.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/yaniv123/home/ClionProj/ex3_OS/cmake-build-debug/CMakeFiles --progress-num=4,5 "Built target ex3_OS_1"
+.PHONY : CMakeFiles/ex3_OS_1.dir/all
+
+# Build rule for subdir invocation for target.
+CMakeFiles/ex3_OS_1.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/yaniv123/home/ClionProj/ex3_OS/cmake-build-debug/CMakeFiles 2
+	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/ex3_OS_1.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/yaniv123/home/ClionProj/ex3_OS/cmake-build-debug/CMakeFiles 0
+.PHONY : CMakeFiles/ex3_OS_1.dir/rule
+
+# Convenience name for target.
+ex3_OS_1: CMakeFiles/ex3_OS_1.dir/rule
+
+.PHONY : ex3_OS_1
+
+# clean rule for target.
+CMakeFiles/ex3_OS_1.dir/clean:
+	$(MAKE) -f CMakeFiles/ex3_OS_1.dir/build.make CMakeFiles/ex3_OS_1.dir/clean
+.PHONY : CMakeFiles/ex3_OS_1.dir/clean
 
 #=============================================================================
 # Target rules for target CMakeFiles/ex3_OS.dir
@@ -74,12 +161,12 @@ clean: CMakeFiles/ex3_OS.dir/clean
 CMakeFiles/ex3_OS.dir/all:
 	$(MAKE) -f CMakeFiles/ex3_OS.dir/build.make CMakeFiles/ex3_OS.dir/depend
 	$(MAKE) -f CMakeFiles/ex3_OS.dir/build.make CMakeFiles/ex3_OS.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/yaniv123/home/ClionProj/ex3_OS/cmake-build-debug/CMakeFiles --progress-num=1,2 "Built target ex3_OS"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/yaniv123/home/ClionProj/ex3_OS/cmake-build-debug/CMakeFiles --progress-num=1,2,3 "Built target ex3_OS"
 .PHONY : CMakeFiles/ex3_OS.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/ex3_OS.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/yaniv123/home/ClionProj/ex3_OS/cmake-build-debug/CMakeFiles 2
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/yaniv123/home/ClionProj/ex3_OS/cmake-build-debug/CMakeFiles 3
 	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/ex3_OS.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/yaniv123/home/ClionProj/ex3_OS/cmake-build-debug/CMakeFiles 0
 .PHONY : CMakeFiles/ex3_OS.dir/rule
