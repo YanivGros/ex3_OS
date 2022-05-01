@@ -1,8 +1,11 @@
-#include "MapReduceFramework.h"
+#include "../MapReduceClient.h"
+#include "../MapReduceFramework.h"
 #include <cstdio>
 #include <string>
 #include <array>
 #include <unistd.h>
+#include <iostream>
+#include <bitset>
 
 class VString : public V1 {
 public:
@@ -68,6 +71,10 @@ public:
 
 int main(int argc, char** argv)
 {
+    uint64_t temp = (((uint64_t(1) << 31) - 1) << 31);
+    std::cout << std::bitset<64>(temp)<<std::endl;
+    std::cout << std::hex << temp<<std::endl;
+    std::cout << 0x3fffffff80000000 << std::endl;
 	CounterClient client;
 	InputVec inputVec;
 	OutputVec outputVec;

@@ -221,9 +221,11 @@
 			<Option target="ex3_OS_1"/>
 		</Unit>
 		<Unit filename="/home/yaniv123/home/ClionProj/ex3_OS/Barrier/Barrier.cpp">
+			<Option target="ex3_OS_3"/>
 			<Option target="ex3_OS_Barrier"/>
 		</Unit>
 		<Unit filename="/home/yaniv123/home/ClionProj/ex3_OS/Barrier/Barrier.h">
+			<Option target="ex3_OS_3"/>
 			<Option target="ex3_OS_Barrier"/>
 		</Unit>
 		<Unit filename="/home/yaniv123/home/ClionProj/ex3_OS/Barrier/barrierdemo.cpp">
@@ -233,6 +235,7 @@
 			<Option target="ex3_OS_3"/>
 		</Unit>
 		<Unit filename="/home/yaniv123/home/ClionProj/ex3_OS/MapReduceFramework.cpp">
+			<Option target="ex3_OS_3"/>
 			<Option target="ex3_OS"/>
 		</Unit>
 		<Unit filename="/home/yaniv123/home/ClionProj/ex3_OS/MapReduceFramework.h">

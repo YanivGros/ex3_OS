@@ -222,6 +222,7 @@ Barrier/Barrier.o: Barrier/Barrier.cpp.o
 
 # target to build an object file
 Barrier/Barrier.cpp.o:
+	$(MAKE) -f CMakeFiles/ex3_OS_3.dir/build.make CMakeFiles/ex3_OS_3.dir/Barrier/Barrier.cpp.o
 	$(MAKE) -f CMakeFiles/ex3_OS_Barrier.dir/build.make CMakeFiles/ex3_OS_Barrier.dir/Barrier/Barrier.cpp.o
 .PHONY : Barrier/Barrier.cpp.o
 
@@ -231,6 +232,7 @@ Barrier/Barrier.i: Barrier/Barrier.cpp.i
 
 # target to preprocess a source file
 Barrier/Barrier.cpp.i:
+	$(MAKE) -f CMakeFiles/ex3_OS_3.dir/build.make CMakeFiles/ex3_OS_3.dir/Barrier/Barrier.cpp.i
 	$(MAKE) -f CMakeFiles/ex3_OS_Barrier.dir/build.make CMakeFiles/ex3_OS_Barrier.dir/Barrier/Barrier.cpp.i
 .PHONY : Barrier/Barrier.cpp.i
 
@@ -240,6 +242,7 @@ Barrier/Barrier.s: Barrier/Barrier.cpp.s
 
 # target to generate assembly for a file
 Barrier/Barrier.cpp.s:
+	$(MAKE) -f CMakeFiles/ex3_OS_3.dir/build.make CMakeFiles/ex3_OS_3.dir/Barrier/Barrier.cpp.s
 	$(MAKE) -f CMakeFiles/ex3_OS_Barrier.dir/build.make CMakeFiles/ex3_OS_Barrier.dir/Barrier/Barrier.cpp.s
 .PHONY : Barrier/Barrier.cpp.s
 
@@ -276,6 +279,7 @@ MapReduceFramework.o: MapReduceFramework.cpp.o
 
 # target to build an object file
 MapReduceFramework.cpp.o:
+	$(MAKE) -f CMakeFiles/ex3_OS_3.dir/build.make CMakeFiles/ex3_OS_3.dir/MapReduceFramework.cpp.o
 	$(MAKE) -f CMakeFiles/ex3_OS.dir/build.make CMakeFiles/ex3_OS.dir/MapReduceFramework.cpp.o
 .PHONY : MapReduceFramework.cpp.o
 
@@ -285,6 +289,7 @@ MapReduceFramework.i: MapReduceFramework.cpp.i
 
 # target to preprocess a source file
 MapReduceFramework.cpp.i:
+	$(MAKE) -f CMakeFiles/ex3_OS_3.dir/build.make CMakeFiles/ex3_OS_3.dir/MapReduceFramework.cpp.i
 	$(MAKE) -f CMakeFiles/ex3_OS.dir/build.make CMakeFiles/ex3_OS.dir/MapReduceFramework.cpp.i
 .PHONY : MapReduceFramework.cpp.i
 
@@ -294,6 +299,7 @@ MapReduceFramework.s: MapReduceFramework.cpp.s
 
 # target to generate assembly for a file
 MapReduceFramework.cpp.s:
+	$(MAKE) -f CMakeFiles/ex3_OS_3.dir/build.make CMakeFiles/ex3_OS_3.dir/MapReduceFramework.cpp.s
 	$(MAKE) -f CMakeFiles/ex3_OS.dir/build.make CMakeFiles/ex3_OS.dir/MapReduceFramework.cpp.s
 .PHONY : MapReduceFramework.cpp.s
 
