@@ -71,16 +71,19 @@ public:
 
 int main(int argc, char** argv)
 {
-    uint64_t temp = (((uint64_t(1) << 31) - 1) << 31);
-    std::cout << std::bitset<64>(temp)<<std::endl;
-    std::cout << std::hex << temp<<std::endl;
-    std::cout << 0x3fffffff80000000 << std::endl;
+//    uint64_t temp = (((uint64_t(1) << 31) - 1) << 31);
+//    std::cout << std::bitset<64>(temp)<<std::endl;
+//    std::cout << std::hex << temp<<std::endl;
+//    std::cout << 0x3fffffff80000000 << std::endl;
 	CounterClient client;
 	InputVec inputVec;
 	OutputVec outputVec;
-	VString s1("This string is full of characters");
-	VString s2("Multithreading is awesome");
-	VString s3("race conditions are bad");
+//	VString s1("This string is full of characters");
+	VString s1("abcd");
+//	VString s2("Multithreading is awesome");
+	VString s2("abcd");
+//	VString s3("race conditions are bad");
+	VString s3("cdba");
 	inputVec.push_back({nullptr, &s1});
 	inputVec.push_back({nullptr, &s2});
 	inputVec.push_back({nullptr, &s3});

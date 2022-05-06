@@ -11,10 +11,14 @@ public:
 	void barrier();
 
 private:
-	pthread_mutex_t mutex;
-	pthread_cond_t cv;
-	int count;
-	int numThreads;
+    pthread_mutex_t mutex;
+    pthread_mutex_t shuffle_mutex;
+    pthread_cond_t cv;
+    pthread_cond_t shuffle_cv;
+    int count;
+    int numThreads;
+
+    void shuffle(int pid);
 };
 
 #endif //BARRIER_H

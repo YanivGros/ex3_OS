@@ -7,5 +7,7 @@ add_executable(ex3_OS Atomic/atomicdemo.cpp Atomic/atomicdemo.cpp MapReduceFrame
 add_executable(ex3_OS_1 Atomic/atomicdemo_multivar.cpp)
 add_executable(ex3_OS_Barrier Barrier/barrierdemo.cpp Barrier/Barrier.cpp Barrier/Barrier.h)
 add_executable(ex3_OS_3 SampleClient/SampleClient.cpp MapReduceClient.h MapReduceFramework.h MapReduceFramework.cpp Barrier/Barrier.h Barrier/Barrier.cpp)
+add_executable(ex3_OS_4 SampleClient/SampleClient.cpp MapReduceClient.h MapReduceFramework.h MapReduceFramework.cpp Barrier/Barrier.h Barrier/Barrier.cpp)
+
 #add_executable(ex_3_os_4 MapReduceFramework.h)
 

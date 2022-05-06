@@ -55,6 +55,7 @@ CMAKE_BINARY_DIR = /home/yaniv123/home/ClionProj/ex3_OS/cmake-build-debug
 # The main recursive "all" target.
 all: CMakeFiles/ex3_OS_3.dir/all
 all: CMakeFiles/ex3_OS_Barrier.dir/all
+all: CMakeFiles/ex3_OS_4.dir/all
 all: CMakeFiles/ex3_OS_1.dir/all
 all: CMakeFiles/ex3_OS.dir/all
 
@@ -68,6 +69,7 @@ preinstall:
 # The main recursive "clean" target.
 clean: CMakeFiles/ex3_OS_3.dir/clean
 clean: CMakeFiles/ex3_OS_Barrier.dir/clean
+clean: CMakeFiles/ex3_OS_4.dir/clean
 clean: CMakeFiles/ex3_OS_1.dir/clean
 clean: CMakeFiles/ex3_OS.dir/clean
 
@@ -107,7 +109,7 @@ CMakeFiles/ex3_OS_3.dir/clean:
 CMakeFiles/ex3_OS_Barrier.dir/all:
 	$(MAKE) -f CMakeFiles/ex3_OS_Barrier.dir/build.make CMakeFiles/ex3_OS_Barrier.dir/depend
 	$(MAKE) -f CMakeFiles/ex3_OS_Barrier.dir/build.make CMakeFiles/ex3_OS_Barrier.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/yaniv123/home/ClionProj/ex3_OS/cmake-build-debug/CMakeFiles --progress-num=10,11,12 "Built target ex3_OS_Barrier"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/yaniv123/home/ClionProj/ex3_OS/cmake-build-debug/CMakeFiles --progress-num=14,15,16 "Built target ex3_OS_Barrier"
 .PHONY : CMakeFiles/ex3_OS_Barrier.dir/all
 
 # Build rule for subdir invocation for target.
@@ -126,6 +128,33 @@ ex3_OS_Barrier: CMakeFiles/ex3_OS_Barrier.dir/rule
 CMakeFiles/ex3_OS_Barrier.dir/clean:
 	$(MAKE) -f CMakeFiles/ex3_OS_Barrier.dir/build.make CMakeFiles/ex3_OS_Barrier.dir/clean
 .PHONY : CMakeFiles/ex3_OS_Barrier.dir/clean
+
+#=============================================================================
+# Target rules for target CMakeFiles/ex3_OS_4.dir
+
+# All Build rule for target.
+CMakeFiles/ex3_OS_4.dir/all:
+	$(MAKE) -f CMakeFiles/ex3_OS_4.dir/build.make CMakeFiles/ex3_OS_4.dir/depend
+	$(MAKE) -f CMakeFiles/ex3_OS_4.dir/build.make CMakeFiles/ex3_OS_4.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/yaniv123/home/ClionProj/ex3_OS/cmake-build-debug/CMakeFiles --progress-num=10,11,12,13 "Built target ex3_OS_4"
+.PHONY : CMakeFiles/ex3_OS_4.dir/all
+
+# Build rule for subdir invocation for target.
+CMakeFiles/ex3_OS_4.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/yaniv123/home/ClionProj/ex3_OS/cmake-build-debug/CMakeFiles 4
+	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/ex3_OS_4.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/yaniv123/home/ClionProj/ex3_OS/cmake-build-debug/CMakeFiles 0
+.PHONY : CMakeFiles/ex3_OS_4.dir/rule
+
+# Convenience name for target.
+ex3_OS_4: CMakeFiles/ex3_OS_4.dir/rule
+
+.PHONY : ex3_OS_4
+
+# clean rule for target.
+CMakeFiles/ex3_OS_4.dir/clean:
+	$(MAKE) -f CMakeFiles/ex3_OS_4.dir/build.make CMakeFiles/ex3_OS_4.dir/clean
+.PHONY : CMakeFiles/ex3_OS_4.dir/clean
 
 #=============================================================================
 # Target rules for target CMakeFiles/ex3_OS_1.dir

@@ -125,6 +125,50 @@
 					<DistClean command="/usr/bin/make -j12 -f &quot;/home/yaniv123/home/ClionProj/ex3_OS/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
+			<Target title="ex3_OS_4">
+				<Option output="/home/yaniv123/home/ClionProj/ex3_OS/cmake-build-debug/ex3_OS_4" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/yaniv123/home/ClionProj/ex3_OS/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/usr/include/c++/9"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/9"/>
+					<Add directory="/usr/include/c++/9/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/9/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j12 -f &quot;/home/yaniv123/home/ClionProj/ex3_OS/cmake-build-debug/Makefile&quot;  VERBOSE=1 ex3_OS_4"/>
+					<CompileFile command="/usr/bin/make -j12 -f &quot;/home/yaniv123/home/ClionProj/ex3_OS/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j12 -f &quot;/home/yaniv123/home/ClionProj/ex3_OS/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j12 -f &quot;/home/yaniv123/home/ClionProj/ex3_OS/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="ex3_OS_4/fast">
+				<Option output="/home/yaniv123/home/ClionProj/ex3_OS/cmake-build-debug/ex3_OS_4" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/yaniv123/home/ClionProj/ex3_OS/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/usr/include/c++/9"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/9"/>
+					<Add directory="/usr/include/c++/9/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/9/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j12 -f &quot;/home/yaniv123/home/ClionProj/ex3_OS/cmake-build-debug/Makefile&quot;  VERBOSE=1 ex3_OS_4/fast"/>
+					<CompileFile command="/usr/bin/make -j12 -f &quot;/home/yaniv123/home/ClionProj/ex3_OS/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j12 -f &quot;/home/yaniv123/home/ClionProj/ex3_OS/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j12 -f &quot;/home/yaniv123/home/ClionProj/ex3_OS/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
 			<Target title="ex3_OS_1">
 				<Option output="/home/yaniv123/home/ClionProj/ex3_OS/cmake-build-debug/ex3_OS_1" prefix_auto="0" extension_auto="0"/>
 				<Option working_dir="/home/yaniv123/home/ClionProj/ex3_OS/cmake-build-debug"/>
@@ -223,26 +267,32 @@
 		<Unit filename="/home/yaniv123/home/ClionProj/ex3_OS/Barrier/Barrier.cpp">
 			<Option target="ex3_OS_3"/>
 			<Option target="ex3_OS_Barrier"/>
+			<Option target="ex3_OS_4"/>
 		</Unit>
 		<Unit filename="/home/yaniv123/home/ClionProj/ex3_OS/Barrier/Barrier.h">
 			<Option target="ex3_OS_3"/>
 			<Option target="ex3_OS_Barrier"/>
+			<Option target="ex3_OS_4"/>
 		</Unit>
 		<Unit filename="/home/yaniv123/home/ClionProj/ex3_OS/Barrier/barrierdemo.cpp">
 			<Option target="ex3_OS_Barrier"/>
 		</Unit>
 		<Unit filename="/home/yaniv123/home/ClionProj/ex3_OS/MapReduceClient.h">
 			<Option target="ex3_OS_3"/>
+			<Option target="ex3_OS_4"/>
 		</Unit>
 		<Unit filename="/home/yaniv123/home/ClionProj/ex3_OS/MapReduceFramework.cpp">
 			<Option target="ex3_OS_3"/>
+			<Option target="ex3_OS_4"/>
 			<Option target="ex3_OS"/>
 		</Unit>
 		<Unit filename="/home/yaniv123/home/ClionProj/ex3_OS/MapReduceFramework.h">
 			<Option target="ex3_OS_3"/>
+			<Option target="ex3_OS_4"/>
 		</Unit>
 		<Unit filename="/home/yaniv123/home/ClionProj/ex3_OS/SampleClient/SampleClient.cpp">
 			<Option target="ex3_OS_3"/>
+			<Option target="ex3_OS_4"/>
 		</Unit>
 		<Unit filename="/home/yaniv123/home/ClionProj/ex3_OS/CMakeLists.txt">
 			<Option virtualFolder="CMake Files\"/>

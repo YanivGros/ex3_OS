@@ -20,7 +20,6 @@ void* foo(void* arg)
 {
 	ThreadContext* tc = (ThreadContext*) arg;
 	printf("Before barriers: %d\n", tc->threadID);
-    tc
 	tc->barrier->barrier();
 
 	printf("Between barriers: %d\n", tc->threadID);

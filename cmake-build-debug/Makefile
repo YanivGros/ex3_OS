@@ -137,6 +137,19 @@ ex3_OS_Barrier/fast:
 .PHONY : ex3_OS_Barrier/fast
 
 #=============================================================================
+# Target rules for targets named ex3_OS_4
+
+# Build rule for target.
+ex3_OS_4: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 ex3_OS_4
+.PHONY : ex3_OS_4
+
+# fast build rule for target.
+ex3_OS_4/fast:
+	$(MAKE) -f CMakeFiles/ex3_OS_4.dir/build.make CMakeFiles/ex3_OS_4.dir/build
+.PHONY : ex3_OS_4/fast
+
+#=============================================================================
 # Target rules for targets named ex3_OS_1
 
 # Build rule for target.
@@ -224,6 +237,7 @@ Barrier/Barrier.o: Barrier/Barrier.cpp.o
 Barrier/Barrier.cpp.o:
 	$(MAKE) -f CMakeFiles/ex3_OS_3.dir/build.make CMakeFiles/ex3_OS_3.dir/Barrier/Barrier.cpp.o
 	$(MAKE) -f CMakeFiles/ex3_OS_Barrier.dir/build.make CMakeFiles/ex3_OS_Barrier.dir/Barrier/Barrier.cpp.o
+	$(MAKE) -f CMakeFiles/ex3_OS_4.dir/build.make CMakeFiles/ex3_OS_4.dir/Barrier/Barrier.cpp.o
 .PHONY : Barrier/Barrier.cpp.o
 
 Barrier/Barrier.i: Barrier/Barrier.cpp.i
@@ -234,6 +248,7 @@ Barrier/Barrier.i: Barrier/Barrier.cpp.i
 Barrier/Barrier.cpp.i:
 	$(MAKE) -f CMakeFiles/ex3_OS_3.dir/build.make CMakeFiles/ex3_OS_3.dir/Barrier/Barrier.cpp.i
 	$(MAKE) -f CMakeFiles/ex3_OS_Barrier.dir/build.make CMakeFiles/ex3_OS_Barrier.dir/Barrier/Barrier.cpp.i
+	$(MAKE) -f CMakeFiles/ex3_OS_4.dir/build.make CMakeFiles/ex3_OS_4.dir/Barrier/Barrier.cpp.i
 .PHONY : Barrier/Barrier.cpp.i
 
 Barrier/Barrier.s: Barrier/Barrier.cpp.s
@@ -244,6 +259,7 @@ Barrier/Barrier.s: Barrier/Barrier.cpp.s
 Barrier/Barrier.cpp.s:
 	$(MAKE) -f CMakeFiles/ex3_OS_3.dir/build.make CMakeFiles/ex3_OS_3.dir/Barrier/Barrier.cpp.s
 	$(MAKE) -f CMakeFiles/ex3_OS_Barrier.dir/build.make CMakeFiles/ex3_OS_Barrier.dir/Barrier/Barrier.cpp.s
+	$(MAKE) -f CMakeFiles/ex3_OS_4.dir/build.make CMakeFiles/ex3_OS_4.dir/Barrier/Barrier.cpp.s
 .PHONY : Barrier/Barrier.cpp.s
 
 Barrier/barrierdemo.o: Barrier/barrierdemo.cpp.o
@@ -280,6 +296,7 @@ MapReduceFramework.o: MapReduceFramework.cpp.o
 # target to build an object file
 MapReduceFramework.cpp.o:
 	$(MAKE) -f CMakeFiles/ex3_OS_3.dir/build.make CMakeFiles/ex3_OS_3.dir/MapReduceFramework.cpp.o
+	$(MAKE) -f CMakeFiles/ex3_OS_4.dir/build.make CMakeFiles/ex3_OS_4.dir/MapReduceFramework.cpp.o
 	$(MAKE) -f CMakeFiles/ex3_OS.dir/build.make CMakeFiles/ex3_OS.dir/MapReduceFramework.cpp.o
 .PHONY : MapReduceFramework.cpp.o
 
@@ -290,6 +307,7 @@ MapReduceFramework.i: MapReduceFramework.cpp.i
 # target to preprocess a source file
 MapReduceFramework.cpp.i:
 	$(MAKE) -f CMakeFiles/ex3_OS_3.dir/build.make CMakeFiles/ex3_OS_3.dir/MapReduceFramework.cpp.i
+	$(MAKE) -f CMakeFiles/ex3_OS_4.dir/build.make CMakeFiles/ex3_OS_4.dir/MapReduceFramework.cpp.i
 	$(MAKE) -f CMakeFiles/ex3_OS.dir/build.make CMakeFiles/ex3_OS.dir/MapReduceFramework.cpp.i
 .PHONY : MapReduceFramework.cpp.i
 
@@ -300,6 +318,7 @@ MapReduceFramework.s: MapReduceFramework.cpp.s
 # target to generate assembly for a file
 MapReduceFramework.cpp.s:
 	$(MAKE) -f CMakeFiles/ex3_OS_3.dir/build.make CMakeFiles/ex3_OS_3.dir/MapReduceFramework.cpp.s
+	$(MAKE) -f CMakeFiles/ex3_OS_4.dir/build.make CMakeFiles/ex3_OS_4.dir/MapReduceFramework.cpp.s
 	$(MAKE) -f CMakeFiles/ex3_OS.dir/build.make CMakeFiles/ex3_OS.dir/MapReduceFramework.cpp.s
 .PHONY : MapReduceFramework.cpp.s
 
@@ -310,6 +329,7 @@ SampleClient/SampleClient.o: SampleClient/SampleClient.cpp.o
 # target to build an object file
 SampleClient/SampleClient.cpp.o:
 	$(MAKE) -f CMakeFiles/ex3_OS_3.dir/build.make CMakeFiles/ex3_OS_3.dir/SampleClient/SampleClient.cpp.o
+	$(MAKE) -f CMakeFiles/ex3_OS_4.dir/build.make CMakeFiles/ex3_OS_4.dir/SampleClient/SampleClient.cpp.o
 .PHONY : SampleClient/SampleClient.cpp.o
 
 SampleClient/SampleClient.i: SampleClient/SampleClient.cpp.i
@@ -319,6 +339,7 @@ SampleClient/SampleClient.i: SampleClient/SampleClient.cpp.i
 # target to preprocess a source file
 SampleClient/SampleClient.cpp.i:
 	$(MAKE) -f CMakeFiles/ex3_OS_3.dir/build.make CMakeFiles/ex3_OS_3.dir/SampleClient/SampleClient.cpp.i
+	$(MAKE) -f CMakeFiles/ex3_OS_4.dir/build.make CMakeFiles/ex3_OS_4.dir/SampleClient/SampleClient.cpp.i
 .PHONY : SampleClient/SampleClient.cpp.i
 
 SampleClient/SampleClient.s: SampleClient/SampleClient.cpp.s
@@ -328,6 +349,7 @@ SampleClient/SampleClient.s: SampleClient/SampleClient.cpp.s
 # target to generate assembly for a file
 SampleClient/SampleClient.cpp.s:
 	$(MAKE) -f CMakeFiles/ex3_OS_3.dir/build.make CMakeFiles/ex3_OS_3.dir/SampleClient/SampleClient.cpp.s
+	$(MAKE) -f CMakeFiles/ex3_OS_4.dir/build.make CMakeFiles/ex3_OS_4.dir/SampleClient/SampleClient.cpp.s
 .PHONY : SampleClient/SampleClient.cpp.s
 
 # Help Target
@@ -340,6 +362,7 @@ help:
 	@echo "... ex3_OS_3"
 	@echo "... edit_cache"
 	@echo "... ex3_OS_Barrier"
+	@echo "... ex3_OS_4"
 	@echo "... ex3_OS_1"
 	@echo "... ex3_OS"
 	@echo "... Atomic/atomicdemo.o"
