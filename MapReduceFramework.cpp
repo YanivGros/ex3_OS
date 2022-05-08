@@ -32,6 +32,17 @@ struct JobInfo {
 } jobInfo;
 
 /* util function*/
+int getDoneJobs();
+
+static void print_start(std::string msg, int ID){
+    printf("<Before: %s, Thread ID: %d, JobsD: %d>\n", msg.c_str(), ID,getDoneJobs());
+    printf("number of jobs done: %d\n", getDoneJobs());
+}
+static void print_end(std::string msg, int ID){
+    printf("</After: %s, Thread ID: %d, JobsD: %d>\n", msg.c_str(), ID,getDoneJobs());
+    printf("number of jobs done: %d\n", getDoneJobs());
+}
+
 bool sortByKey(const IntermediatePair &p1, const IntermediatePair &p2) { return *p1.first < *p2.first; }
 bool sortKeys(const K2 *k2_1, const K2 *k2_2) { return *k2_1 < *k2_2; }
 
@@ -59,14 +70,11 @@ void increaseDoneJobs() {
 IntermediateVec keyFromAllThreads(K2 *key) {
     IntermediateVec vec;
     for (auto context: jobInfo.contextVec) {
-
         while (!context->interMediates->empty() &&
                !(*key < *context->interMediates->back().first) &&
                !(*context->interMediates->back().first < *key)) {
 
             vec.push_back(context->interMediates->back());
-            std::cout << "rani is a magican" << *(char *) key << std::endl;
-
             context->interMediates->pop_back();
             increaseDoneJobs();
         }
@@ -98,58 +106,36 @@ void shuffle() {
 void *mapWithBarrier(void *arg) {
     /* map */
     auto *tc = (ThreadContext *) arg;
-    std::cout << "start Map thread:\n" << tc->threadID;
     int old_value = getAndIncStartedJobs();
-    std::cout << "OLD VALUE:" << old_value << std::endl;
     while (old_value < jobInfo.thread_input->size()) {
         K1 *k1 = jobInfo.thread_input->at(old_value).first;
         V1 *v1 = jobInfo.thread_input->at(old_value).second;
+        print_start("map", tc->threadID);
         jobInfo.client->map(k1, v1, tc);
         increaseDoneJobs();
+        print_end("map", tc->threadID);
         old_value = getAndIncStartedJobs();
     }
-    printf("finish Map thread: %d\n", tc->threadID);
 
     /* sort */
-    printf("starting to sort, ThreadId: %d\n", tc->threadID);
+    print_start("sort", tc->threadID);
     std::sort(tc->interMediates->begin(), tc->interMediates->end(), sortByKey);
-    printf("finish sorting, ThreadId: %d\n", tc->threadID);
+    print_end("sort", tc->threadID);
 
     tc->barrier->barrier();
     // mutex
 
-    std::cout << "end" << std::endl;
-
     if (tc->threadID != 0) {
+        print_start("shuffle", tc->threadID);
         tc->barrier->barrier();
+        print_end("shuffle", tc->threadID);
     } else {
-        *(jobInfo.status) = ((uint64_t) SHUFFLE_STAGE << 62);
+        print_start("shuffle_thread_0", tc->threadID);
+        * (jobInfo.status) = ((uint64_t) SHUFFLE_STAGE << 62);
         shuffle();
         tc->barrier->barrier();
+        print_end("shuffle_thread_0", tc->threadID);
     }
-
-
-//
-//    if (pthread_mutex_lock(&jobInfo.shuffle_mutex) != 0){
-//        fprintf(stderr, "[[Barrier]] error on pthread_mutex_lock");
-//        exit(1);
-//    }
-//    if (tc->threadID != 0) {
-//        if (pthread_cond_wait(&jobInfo.shuffle_cv, &jobInfo.shuffle_mutex) != 0){
-//            fprintf(stderr, "[[Barrier]] error on pthread_cond_wait");
-//            exit(1);
-//        }
-//    } else {
-//        shuffle();
-//        if (pthread_cond_broadcast(&jobInfo.shuffle_cv) != 0) {
-//            fprintf(stderr, "[[Barrier]] error on pthread_cond_broadcast");
-//            exit(1);
-//        }
-//    }
-//    if (pthread_mutex_unlock(&jobInfo.shuffle_mutex) != 0) {
-//        fprintf(stderr, "[[Barrier]] error on pthread_mutex_unlock");
-//        exit(1);
-//    }
     return nullptr;
 }
 
@@ -163,9 +149,9 @@ startMapReduceJob(const MapReduceClient &client, const InputVec &inputVec, Outpu
     std::vector<pthread_t> threads;
     threads.resize(multiThreadLevel);
     std::vector<ThreadContext *> contexts;
+    pthread_t p;
 
     auto *barrier = new Barrier(multiThreadLevel);
-
     for (int i = 0; i < multiThreadLevel; ++i) {
         auto intermediateVec = new IntermediateVec();
         auto cont = new ThreadContext{i, barrier, intermediateVec};
@@ -180,17 +166,22 @@ startMapReduceJob(const MapReduceClient &client, const InputVec &inputVec, Outpu
     *jobInfo.status = (*jobInfo.status).load() + (uint64_t(MAP_STAGE) << 62); // check if working
     for (int i = 0; i < multiThreadLevel; ++i) {
         printf("thread number :%d \n", i);
-        pthread_create(&threads[i], NULL, mapWithBarrier, jobInfo.contextVec[i]);
+        if (pthread_create(&threads[i], NULL, mapWithBarrier, jobInfo.contextVec[i])) {
+            fprintf(stderr, "[[Barrier]] error on pthread_cond_wait");
+            exit(EXIT_FAILURE) ;
+        }
     }
     return &jobInfo;
 }
 
 void emit2(K2 *key, V2 *value, void *context) {
-    std::cout << "Is Calling emit2" << std::endl;
+
     auto *tc = (ThreadContext *) context;
+    print_start("emit2", tc->threadID);
     tc->interMediates->push_back(IntermediatePair(key, value));
     jobInfo.keyVec.push_back(key);
     jobInfo.numOfIntermediates++;
+    print_end("emit2", tc->threadID);
 }
 
 void emit3(K3 *key, V3 *value, void *context) {}
@@ -201,8 +192,8 @@ void getJobState(JobHandle job, JobState *state) {
     auto jobInfo_ = (JobInfo *) job;
     int temp = (int) ((*jobInfo_->status).load() >> 62);
     state->stage = (stage_t) temp;
-    std::cout << "this is the amount of done jobs " << getDoneJobs() << std::endl;
-    std::cout << "this is the amount of total jobs " << jobInfo_->thread_input->size() << std::endl;
+//    std::cout << "this is the amount of done jobs " << getDoneJobs() << std::endl;
+//    std::cout << "this is the amount of total jobs " << jobInfo_->thread_input->size() << std::endl;
     state->percentage = ((float) getDoneJobs() / (float) jobInfo_->thread_input->size()) * 100;
 }
 

@@ -75,7 +75,7 @@ int main(int argc, char** argv)
 //    std::cout << std::bitset<64>(temp)<<std::endl;
 //    std::cout << std::hex << temp<<std::endl;
 //    std::cout << 0x3fffffff80000000 << std::endl;
-	CounterClient client;
+    CounterClient client;
 	InputVec inputVec;
 	OutputVec outputVec;
 //	VString s1("This string is full of characters");
