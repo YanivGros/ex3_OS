@@ -32,7 +32,8 @@ struct JobInfo {
 } jobInfo;
 
 /* util function*/
-bool sortByKey(const IntermediatePair &p1, const IntermediatePair &p2) { return p1.first < p2.first; }
+bool sortByKey(const IntermediatePair &p1, const IntermediatePair &p2) { return *p1.first < *p2.first; }
+bool sortKeys(const K2 *k2_1, const K2 *k2_2) { return *k2_1 < *k2_2; }
 
 int getStartJobs() {
     uint64_t temp = (jobInfo.status->load()) & ((uint64_t(1) << 31) - 1);

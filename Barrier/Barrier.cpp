@@ -7,6 +7,8 @@ Barrier::Barrier(int numThreads)
 		, cv(PTHREAD_COND_INITIALIZER)
 		, count(0)
 		, numThreads(numThreads)
+        , shuffle_cv(PTHREAD_COND_INITIALIZER)
+        , shuffle_mutex(PTHREAD_MUTEX_INITIALIZER)
 { }
 
 
@@ -46,3 +48,9 @@ void Barrier::barrier()
 		exit(1);
 	}
 }
+void Barrier::shuffle(int pid)
+{
+
+}
+
+
