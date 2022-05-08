@@ -16,20 +16,22 @@
 /* struct  */
 struct ThreadContext {
     int threadID;
-    Barrier *barrier;
     IntermediateVec *interMediates;
 };
 struct JobInfo {
-    std::vector<K2*> keyVec;
-    std::atomic<uint64_t> *status;
-    std::atomic<uint32_t> *numOfIntermediates;
+    std::vector<K2 *> keyVec;
     std::vector<ThreadContext *> contextVec;
+    std::vector<std::vector<IntermediatePair>> allVecs;
+    std::vector<pthread_t> threadsVec;
+
     MapReduceClient const *client;
     InputVec const *thread_input;
-    pthread_mutex_t shuffle_mutex;
-    pthread_cond_t shuffle_cv;
-    std::vector<std::vector<IntermediatePair>> allVecs;
-} jobInfo;
+
+    Barrier *barrier;
+
+    std::atomic<uint64_t> *status;
+    std::atomic<uint32_t> *numOfIntermediates;
+};
 
 /* util function*/
 int getDoneJobs();
@@ -143,15 +145,14 @@ void *mapWithBarrier(void *arg) {
 JobHandle
 startMapReduceJob(const MapReduceClient &client, const InputVec &inputVec, OutputVec &outputVec, int multiThreadLevel) {
     // init Job info
+    JobInfo jobInfo;
     jobInfo.client = &client;
     jobInfo.status = new std::atomic<uint64_t>(0);
     jobInfo.numOfIntermediates = new std::atomic<uint32_t>(0);
-    std::vector<pthread_t> threads;
-    threads.resize(multiThreadLevel);
-    std::vector<ThreadContext *> contexts;
-    pthread_t p;
+    jobInfo.threadsVec.resize(multiThreadLevel);
+    jobInfo.contextVec;
+    jobInfo.barrier = new Barrier(multiThreadLevel);
 
-    auto *barrier = new Barrier(multiThreadLevel);
     for (int i = 0; i < multiThreadLevel; ++i) {
         auto intermediateVec = new IntermediateVec();
         auto cont = new ThreadContext{i, barrier, intermediateVec};
