@@ -20,7 +20,7 @@ struct ThreadContext {
     IntermediateVec *interMediates;
 };
 struct JobInfo {
-    std::set<K2*> keySet;
+    std::vector<K2*> keyVec;
     std::atomic<uint64_t> *status;
     std::atomic<uint32_t> *numOfIntermediates;
     std::vector<ThreadContext *> contextVec;
@@ -76,21 +76,20 @@ IntermediateVec keyFromAllThreads(K2 *key) {
 
 
 void shuffle() {
-//    std::vector<K2 *> keyVec_(jobInfo.keySet.begin(), jobInfo.keySet.end());
-    std::vector<K2*> keyVec(jobInfo.keySet.begin(), jobInfo.keySet.end());
     std::vector<std::vector<IntermediatePair>> allVecs;
-//    std::copy(jobInfo.keySet.begin(), jobInfo.keySet.end(), keyVec.begin());
-    std::sort(keyVec.begin(), keyVec.end());
-    std::reverse(keyVec.begin(), keyVec.end());
-
-
-    while (!keyVec.empty()) {
-        auto key = keyVec.back();
+    std::sort(jobInfo.keyVec.begin(), jobInfo.keyVec.end(), sortKeys);
+    while (!jobInfo.keyVec.empty()) {
+        auto key = jobInfo.keyVec.back();
         auto res = keyFromAllThreads(key);
         allVecs.push_back(res);
-//        allVecs.push_back(keyFromAllThreads(key));
-        keyVec.pop_back();
+        while (!jobInfo.keyVec.empty() &&
+               !(*key < *jobInfo.keyVec.back()) &&
+               !(*jobInfo.keyVec.back() < *key)) {
+            jobInfo.keyVec.pop_back();
+        }
+
     }
+
     jobInfo.allVecs = allVecs;
 
 }
@@ -190,7 +189,7 @@ void emit2(K2 *key, V2 *value, void *context) {
     std::cout << "Is Calling emit2" << std::endl;
     auto *tc = (ThreadContext *) context;
     tc->interMediates->push_back(IntermediatePair(key, value));
-    jobInfo.keySet.insert(key);
+    jobInfo.keyVec.push_back(key);
     jobInfo.numOfIntermediates++;
 }
 
