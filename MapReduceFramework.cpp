@@ -12,6 +12,7 @@
 #include <iostream>
 #include <bitset>
 #include <unistd.h>
+#include <memory>
 
 /* struct  */
 struct JobInfo;
@@ -34,8 +35,9 @@ struct JobInfo {
 
     Barrier *barrier{};
     std::atomic_flag hasWaited = ATOMIC_FLAG_INIT;
-    std::atomic<uint64_t> *status{};
-    std::atomic<uint32_t> *numOfIntermediates{};
+    std::shared_ptr<std::atomic<uint64_t>> status{};
+    std::shared_ptr<std::atomic<uint32_t>> numOfIntermediates{};
+
     OutputVec *outputVec;
     int totalJobs;
 };
@@ -43,14 +45,16 @@ struct JobInfo {
 /* util function*/
 int getDoneJobs(JobInfo *jobInfo);
 
-static void print_start(std::string msg, int ID){
+static void print_start(std::string msg, int ID) {
 //    printf("<Before: %s, Thread ID: %d>\n", msg.c_str(), ID);
 }
-static void print_end(std::string msg, int ID){
+
+static void print_end(std::string msg, int ID) {
 //    printf("</After: %s, Thread ID: %d>\n", msg.c_str(), ID);
 }
 
 bool sortByKey(const IntermediatePair &p1, const IntermediatePair &p2) { return *p1.first < *p2.first; }
+
 bool sortKeys(const K2 *k2_1, const K2 *k2_2) { return *k2_1 < *k2_2; }
 
 int getStartJobs(uint64_t n) {
@@ -73,15 +77,15 @@ int getDoneJobs(JobInfo *jobInfo) {
 }
 
 void increaseDoneJobs(JobInfo *jobInfo) {
-    std::bitset<64>j(jobInfo->status->load());
+    std::bitset<64> j(jobInfo->status->load());
     std::cout << j << "\n";
     *jobInfo->status = *jobInfo->status + (uint64_t(1) << 31);
 
-    std::bitset<64>y(jobInfo->status->load());
+    std::bitset<64> y(jobInfo->status->load());
     std::cout << y << '\n';
 }
 
-IntermediateVec keyFromAllThreads(K2 *key,JobInfo* jobInfo) {
+IntermediateVec keyFromAllThreads(K2 *key, JobInfo *jobInfo) {
     IntermediateVec vec;
     for (auto context: jobInfo->contextVec) {
         while (!context->interMediates->empty() &&
@@ -100,10 +104,10 @@ IntermediateVec keyFromAllThreads(K2 *key,JobInfo* jobInfo) {
 void shuffle(JobInfo *jobInfo) {
     std::vector<std::vector<IntermediatePair>> allVecs;
     std::sort(jobInfo->keyVec.begin(), jobInfo->keyVec.end(), sortKeys);
-    jobInfo->totalJobs = (int)jobInfo->numOfIntermediates->load();
+    jobInfo->totalJobs = (int) jobInfo->numOfIntermediates->load();
     while (!jobInfo->keyVec.empty()) {
         auto key = jobInfo->keyVec.back();
-        auto res = keyFromAllThreads(key,jobInfo);
+        auto res = keyFromAllThreads(key, jobInfo);
         allVecs.push_back(res);
         while (!jobInfo->keyVec.empty() &&
                !(*key < *jobInfo->keyVec.back()) &&
@@ -149,17 +153,17 @@ void *mapWithBarrier(void *arg) {
         print_end("shuffle", tc->threadID);
     } else {
         print_start("shuffle_thread_0", tc->threadID);
-        * (jobInfo->status) = ((uint64_t) SHUFFLE_STAGE << 62);
+        *(jobInfo->status) = ((uint64_t) SHUFFLE_STAGE << 62);
         shuffle(jobInfo);
         jobInfo->barrier->barrier();
         print_end("shuffle_thread_0", tc->threadID);
 
-        *jobInfo->status = (uint64_t)REDUCE_STAGE << 62;
-        jobInfo->totalJobs = (int)jobInfo->allVecs.size();
+        *jobInfo->status = (uint64_t) REDUCE_STAGE << 62;
+        jobInfo->totalJobs = (int) jobInfo->allVecs.size();
     }
     getDoneJobs(jobInfo);
     print_start("reduce", tc->threadID);
-    jobInfo->totalJobs = (int)jobInfo->allVecs.size();
+    jobInfo->totalJobs = (int) jobInfo->allVecs.size();
     old_value = getAndIncStartedJobs(jobInfo);
     while (old_value < jobInfo->allVecs.size()) {
         auto curr_vec = jobInfo->allVecs[old_value];
@@ -176,8 +180,8 @@ startMapReduceJob(const MapReduceClient &client, const InputVec &inputVec, Outpu
     // init Job info
     auto jobInfo = new JobInfo;
     jobInfo->client = &client;
-    jobInfo->status = new std::atomic<uint64_t>(0);
-    jobInfo->numOfIntermediates = new std::atomic<uint32_t>(0);
+    jobInfo->status = std::make_shared<std::atomic<uint64_t>>(0);
+    jobInfo->numOfIntermediates = std::make_shared<std::atomic<uint32_t>>(0);
     jobInfo->threadsVec.resize(multiThreadLevel);
     jobInfo->thread_input = &inputVec;
     *(jobInfo->status) = uint64_t(MAP_STAGE) << 62; // check if working
@@ -197,10 +201,9 @@ startMapReduceJob(const MapReduceClient &client, const InputVec &inputVec, Outpu
 
 
     for (int i = 0; i < multiThreadLevel; ++i) {
-//        printf("thread number :%d \n", i);
         if (pthread_create(&jobInfo->threadsVec[i], NULL, mapWithBarrier, jobInfo->contextVec[i])) {
             fprintf(stderr, "[[Barrier]] error on pthread_cond_wait");
-            exit(EXIT_FAILURE) ;
+            exit(EXIT_FAILURE);
         }
     }
     return jobInfo;
@@ -217,7 +220,8 @@ void emit2(K2 *key, V2 *value, void *context) {
         exit(EXIT_FAILURE);
     }
     jobInfo->keyVec.push_back(key);
-    jobInfo->numOfIntermediates++;
+    jobInfo->numOfIntermediates->operator++();
+
     if (pthread_mutex_unlock(&jobInfo->mutexEmit2) != 0) {
         fprintf(stderr, "[[emit3]] error on pthread_mutex_unlock");
         exit(EXIT_FAILURE);
@@ -243,8 +247,8 @@ void emit3(K3 *key, V3 *value, void *context) {
 }
 
 void waitForJob(JobHandle job) {
-    auto jobInfo = (JobInfo*) job;
-    if (jobInfo->hasWaited.test_and_set(static_cast<std::memory_order>(true))){
+    auto jobInfo = (JobInfo *) job;
+    if (jobInfo->hasWaited.test_and_set(static_cast<std::memory_order>(true))) {
         return;
     }
 
@@ -263,15 +267,13 @@ void getJobState(JobHandle job, JobState *state) {
 }
 
 void closeJobHandle(JobHandle job) {
+    waitForJob(job);
     auto jobInfo_ = (JobInfo *) job;
     if (pthread_mutex_destroy(&jobInfo_->mutexEmit3) != 0) {
         fprintf(stderr, "[[closeJobHandle]] error on pthread_mutex_destroy");
         exit(1);
     }
 
-    delete jobInfo_->barrier;
-    delete jobInfo_->status;
-    delete jobInfo_->numOfIntermediates;
 }
 
 
