@@ -264,12 +264,12 @@
 		<Unit filename="/home/yaniv123/home/ClionProj/ex3_OS/Atomic/atomicdemo_multivar.cpp">
 			<Option target="ex3_OS_1"/>
 		</Unit>
-		<Unit filename="/home/yaniv123/home/ClionProj/ex3_OS/Barrier/Barrier.cpp">
+		<Unit filename="/home/yaniv123/home/ClionProj/ex3_OS/Barrier.cpp">
 			<Option target="ex3_OS_3"/>
 			<Option target="ex3_OS_Barrier"/>
 			<Option target="ex3_OS_4"/>
 		</Unit>
-		<Unit filename="/home/yaniv123/home/ClionProj/ex3_OS/Barrier/Barrier.h">
+		<Unit filename="/home/yaniv123/home/ClionProj/ex3_OS/Barrier.h">
 			<Option target="ex3_OS_3"/>
 			<Option target="ex3_OS_Barrier"/>
 			<Option target="ex3_OS_4"/>

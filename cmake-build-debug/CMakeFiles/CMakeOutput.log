@@ -459,3 +459,45 @@ Parsed CXX implicit link information from above output:
   implicit fwks: []
 
 
+Determining if the include file pthread.h exists passed with the following output:
+Change Dir: /home/yaniv123/home/ClionProj/ex3_OS/cmake-build-debug/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make cmTC_a89f3/fast && /usr/bin/make -f CMakeFiles/cmTC_a89f3.dir/build.make CMakeFiles/cmTC_a89f3.dir/build
+make[1]: Entering directory '/home/yaniv123/home/ClionProj/ex3_OS/cmake-build-debug/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_a89f3.dir/CheckIncludeFile.c.o
+/usr/bin/cc    -o CMakeFiles/cmTC_a89f3.dir/CheckIncludeFile.c.o   -c /home/yaniv123/home/ClionProj/ex3_OS/cmake-build-debug/CMakeFiles/CMakeTmp/CheckIncludeFile.c
+Linking C executable cmTC_a89f3
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_a89f3.dir/link.txt --verbose=1
+/usr/bin/cc      -rdynamic CMakeFiles/cmTC_a89f3.dir/CheckIncludeFile.c.o  -o cmTC_a89f3 
+make[1]: Leaving directory '/home/yaniv123/home/ClionProj/ex3_OS/cmake-build-debug/CMakeFiles/CMakeTmp'
+
+
+
+Determining if the include file pthread.h exists passed with the following output:
+Change Dir: /home/yaniv123/home/ClionProj/ex3_OS/cmake-build-debug/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make cmTC_911e5/fast && /usr/bin/make -f CMakeFiles/cmTC_911e5.dir/build.make CMakeFiles/cmTC_911e5.dir/build
+make[1]: Entering directory '/home/yaniv123/home/ClionProj/ex3_OS/cmake-build-debug/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_911e5.dir/CheckIncludeFile.c.o
+/usr/bin/cc    -o CMakeFiles/cmTC_911e5.dir/CheckIncludeFile.c.o   -c /home/yaniv123/home/ClionProj/ex3_OS/cmake-build-debug/CMakeFiles/CMakeTmp/CheckIncludeFile.c
+Linking C executable cmTC_911e5
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_911e5.dir/link.txt --verbose=1
+/usr/bin/cc      -rdynamic CMakeFiles/cmTC_911e5.dir/CheckIncludeFile.c.o  -o cmTC_911e5 
+make[1]: Leaving directory '/home/yaniv123/home/ClionProj/ex3_OS/cmake-build-debug/CMakeFiles/CMakeTmp'
+
+
+
+Determining if the include file pthread.h exists passed with the following output:
+Change Dir: /home/yaniv123/home/ClionProj/ex3_OS/cmake-build-debug/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make cmTC_eb1e6/fast && /usr/bin/make -f CMakeFiles/cmTC_eb1e6.dir/build.make CMakeFiles/cmTC_eb1e6.dir/build
+make[1]: Entering directory '/home/yaniv123/home/ClionProj/ex3_OS/cmake-build-debug/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_eb1e6.dir/CheckIncludeFile.c.o
+/usr/bin/cc    -o CMakeFiles/cmTC_eb1e6.dir/CheckIncludeFile.c.o   -c /home/yaniv123/home/ClionProj/ex3_OS/cmake-build-debug/CMakeFiles/CMakeTmp/CheckIncludeFile.c
+Linking C executable cmTC_eb1e6
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_eb1e6.dir/link.txt --verbose=1
+/usr/bin/cc      -rdynamic CMakeFiles/cmTC_eb1e6.dir/CheckIncludeFile.c.o  -o cmTC_eb1e6 
+make[1]: Leaving directory '/home/yaniv123/home/ClionProj/ex3_OS/cmake-build-debug/CMakeFiles/CMakeTmp'
+
+
+

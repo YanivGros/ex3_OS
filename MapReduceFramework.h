@@ -1,12 +1,15 @@
 #ifndef MAPREDUCEFRAMEWORK_H
 #define MAPREDUCEFRAMEWORK_H
 
+#include <cctype>
+#include <cstdint>
 #include "MapReduceClient.h"
 
 typedef void* JobHandle;
 
 enum stage_t {UNDEFINED_STAGE=0, MAP_STAGE=1, SHUFFLE_STAGE=2, REDUCE_STAGE=3};
 
+static const __uint64_t power_31 = uint64_t(1) << 31;
 typedef struct {
 	stage_t stage;
 	float percentage;

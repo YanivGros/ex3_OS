@@ -1,4 +1,15 @@
 C:\WINDOWS\system32\wsl.exe --distribution Ubuntu --exec /bin/bash -c "export CLION_IDE=TRUE && export JETBRAINS_IDE=TRUE && cd /home/yaniv123/home/ClionProj/ex3_OS/cmake-build-debug && /usr/bin/cmake -DCMAKE_BUILD_TYPE=Debug -G 'CodeBlocks - Unix Makefiles' -S /home/yaniv123/home/ClionProj/ex3_OS -B /home/yaniv123/home/ClionProj/ex3_OS/cmake-build-debug"
 -- Configuring done
 -- Generating done
+-- Build files have been written to: /home/yaniv123/home/ClionProj/ex3_OS/cmake-build-debug/mattanTests/googletest-download
+[ 11%] Performing update step for 'googletest'
+Current branch main is up to date.
+[ 22%] No configure step for 'googletest'
+[ 33%] No build step for 'googletest'
+[ 44%] No install step for 'googletest'
+[ 55%] No test step for 'googletest'
+[ 66%] Completed 'googletest'
+[100%] Built target googletest
+-- Configuring done
+-- Generating done
 -- Build files have been written to: /home/yaniv123/home/ClionProj/ex3_OS/cmake-build-debug
