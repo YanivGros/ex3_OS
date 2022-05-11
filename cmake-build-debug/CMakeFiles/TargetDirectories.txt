@@ -4,6 +4,7 @@
 /home/yaniv123/home/ClionProj/ex3_OS/cmake-build-debug/CMakeFiles/list_install_components.dir
 /home/yaniv123/home/ClionProj/ex3_OS/cmake-build-debug/CMakeFiles/rebuild_cache.dir
 /home/yaniv123/home/ClionProj/ex3_OS/cmake-build-debug/CMakeFiles/edit_cache.dir
+/home/yaniv123/home/ClionProj/ex3_OS/cmake-build-debug/CMakeFiles/playing.dir
 /home/yaniv123/home/ClionProj/ex3_OS/cmake-build-debug/CMakeFiles/MapReduceFramework.dir
 /home/yaniv123/home/ClionProj/ex3_OS/cmake-build-debug/mattanTests/CMakeFiles/install/local.dir
 /home/yaniv123/home/ClionProj/ex3_OS/cmake-build-debug/mattanTests/CMakeFiles/install.dir

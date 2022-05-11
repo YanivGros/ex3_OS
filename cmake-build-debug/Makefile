@@ -157,6 +157,19 @@ depend:
 .PHONY : depend
 
 #=============================================================================
+# Target rules for targets named playing
+
+# Build rule for target.
+playing: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 playing
+.PHONY : playing
+
+# fast build rule for target.
+playing/fast:
+	$(MAKE) -f CMakeFiles/playing.dir/build.make CMakeFiles/playing.dir/build
+.PHONY : playing/fast
+
+#=============================================================================
 # Target rules for targets named MapReduceFramework
 
 # Build rule for target.
@@ -240,6 +253,7 @@ Barrier.o: Barrier.cpp.o
 
 # target to build an object file
 Barrier.cpp.o:
+	$(MAKE) -f CMakeFiles/playing.dir/build.make CMakeFiles/playing.dir/Barrier.cpp.o
 	$(MAKE) -f CMakeFiles/MapReduceFramework.dir/build.make CMakeFiles/MapReduceFramework.dir/Barrier.cpp.o
 .PHONY : Barrier.cpp.o
 
@@ -249,6 +263,7 @@ Barrier.i: Barrier.cpp.i
 
 # target to preprocess a source file
 Barrier.cpp.i:
+	$(MAKE) -f CMakeFiles/playing.dir/build.make CMakeFiles/playing.dir/Barrier.cpp.i
 	$(MAKE) -f CMakeFiles/MapReduceFramework.dir/build.make CMakeFiles/MapReduceFramework.dir/Barrier.cpp.i
 .PHONY : Barrier.cpp.i
 
@@ -258,6 +273,7 @@ Barrier.s: Barrier.cpp.s
 
 # target to generate assembly for a file
 Barrier.cpp.s:
+	$(MAKE) -f CMakeFiles/playing.dir/build.make CMakeFiles/playing.dir/Barrier.cpp.s
 	$(MAKE) -f CMakeFiles/MapReduceFramework.dir/build.make CMakeFiles/MapReduceFramework.dir/Barrier.cpp.s
 .PHONY : Barrier.cpp.s
 
@@ -267,6 +283,7 @@ MapReduceFramework.o: MapReduceFramework.cpp.o
 
 # target to build an object file
 MapReduceFramework.cpp.o:
+	$(MAKE) -f CMakeFiles/playing.dir/build.make CMakeFiles/playing.dir/MapReduceFramework.cpp.o
 	$(MAKE) -f CMakeFiles/MapReduceFramework.dir/build.make CMakeFiles/MapReduceFramework.dir/MapReduceFramework.cpp.o
 .PHONY : MapReduceFramework.cpp.o
 
@@ -276,6 +293,7 @@ MapReduceFramework.i: MapReduceFramework.cpp.i
 
 # target to preprocess a source file
 MapReduceFramework.cpp.i:
+	$(MAKE) -f CMakeFiles/playing.dir/build.make CMakeFiles/playing.dir/MapReduceFramework.cpp.i
 	$(MAKE) -f CMakeFiles/MapReduceFramework.dir/build.make CMakeFiles/MapReduceFramework.dir/MapReduceFramework.cpp.i
 .PHONY : MapReduceFramework.cpp.i
 
@@ -285,8 +303,36 @@ MapReduceFramework.s: MapReduceFramework.cpp.s
 
 # target to generate assembly for a file
 MapReduceFramework.cpp.s:
+	$(MAKE) -f CMakeFiles/playing.dir/build.make CMakeFiles/playing.dir/MapReduceFramework.cpp.s
 	$(MAKE) -f CMakeFiles/MapReduceFramework.dir/build.make CMakeFiles/MapReduceFramework.dir/MapReduceFramework.cpp.s
 .PHONY : MapReduceFramework.cpp.s
+
+SampleClient/SampleClient.o: SampleClient/SampleClient.cpp.o
+
+.PHONY : SampleClient/SampleClient.o
+
+# target to build an object file
+SampleClient/SampleClient.cpp.o:
+	$(MAKE) -f CMakeFiles/playing.dir/build.make CMakeFiles/playing.dir/SampleClient/SampleClient.cpp.o
+.PHONY : SampleClient/SampleClient.cpp.o
+
+SampleClient/SampleClient.i: SampleClient/SampleClient.cpp.i
+
+.PHONY : SampleClient/SampleClient.i
+
+# target to preprocess a source file
+SampleClient/SampleClient.cpp.i:
+	$(MAKE) -f CMakeFiles/playing.dir/build.make CMakeFiles/playing.dir/SampleClient/SampleClient.cpp.i
+.PHONY : SampleClient/SampleClient.cpp.i
+
+SampleClient/SampleClient.s: SampleClient/SampleClient.cpp.s
+
+.PHONY : SampleClient/SampleClient.s
+
+# target to generate assembly for a file
+SampleClient/SampleClient.cpp.s:
+	$(MAKE) -f CMakeFiles/playing.dir/build.make CMakeFiles/playing.dir/SampleClient/SampleClient.cpp.s
+.PHONY : SampleClient/SampleClient.cpp.s
 
 # Help Target
 help:
@@ -300,6 +346,7 @@ help:
 	@echo "... list_install_components"
 	@echo "... rebuild_cache"
 	@echo "... edit_cache"
+	@echo "... playing"
 	@echo "... MapReduceFramework"
 	@echo "... mattanTester"
 	@echo "... gmock_main"
@@ -312,6 +359,9 @@ help:
 	@echo "... MapReduceFramework.o"
 	@echo "... MapReduceFramework.i"
 	@echo "... MapReduceFramework.s"
+	@echo "... SampleClient/SampleClient.o"
+	@echo "... SampleClient/SampleClient.i"
+	@echo "... SampleClient/SampleClient.s"
 .PHONY : help
 
 

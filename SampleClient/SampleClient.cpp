@@ -47,7 +47,7 @@ public:
 
 			KChar* k2 = new KChar(i);
 			VCount* v2 = new VCount(counts[i]);
-			usleep(150000);
+//			usleep(150000);
 			emit2(k2, v2, context);
 		}
 	}
@@ -78,22 +78,22 @@ int main(int argc, char** argv)
     CounterClient client;
 	InputVec inputVec;
 	OutputVec outputVec;
-	VString s1("This string is full of characters");
+	VString s1("abcd");
 	VString s2("abcd");
-	VString s3("Multithreading is awesome");
-	VString s4("Lavi is mine forever");
-	VString s5("race conditions are bad");
-	VString s6("Yaniv is the best foootball player in the world");
-	VString s7("we are the best i can feel it in my bones");
-	VString s8("we are the best i can feel dsad kasndfajsfnkjdsan fdna jfkdna fjkew;qfn jkdnaf e;jiwnqf jkdfw;iqnfkjdnajkfbewjiq bufiewqpbf jkdna;kjf it in my bones");
+	VString s3("abcde");
+//	VString s4("Lavi is mine forever");
+//	VString s5("race conditions are bad");
+//	VString s6("Yaniv is the best foootball player in the world");
+//	VString s7("we are the best i can feel it in my bones");
+//	VString s8("we are the best i can feel dsad kasndfajsfnkjdsan fdna jfkdna fjkew;qfn jkdnaf e;jiwnqf jkdfw;iqnfkjdnajkfbewjiq bufiewqpbf jkdna;kjf it in my bones");
 	inputVec.push_back({nullptr, &s1});
 	inputVec.push_back({nullptr, &s2});
 	inputVec.push_back({nullptr, &s3});
-	inputVec.push_back({nullptr, &s4});
-	inputVec.push_back({nullptr, &s5});
-	inputVec.push_back({nullptr, &s6});
-	inputVec.push_back({nullptr, &s7});
-	inputVec.push_back({nullptr, &s8});
+//	inputVec.push_back({nullptr, &s4});
+//	inputVec.push_back({nullptr, &s5});
+//	inputVec.push_back({nullptr, &s6});
+//	inputVec.push_back({nullptr, &s7});
+//	inputVec.push_back({nullptr, &s8});
 	JobState state;
     JobState last_state={UNDEFINED_STAGE,0};
 	JobHandle job = startMapReduceJob(client, inputVec, outputVec, 4);
@@ -105,7 +105,7 @@ int main(int argc, char** argv)
             printf("stage %d, %f%% \n", 
 			state.stage, state.percentage);
         }
-		usleep(100000);
+//		usleep(1000);
         last_state = state;
 		getJobState(job, &state);
 	}

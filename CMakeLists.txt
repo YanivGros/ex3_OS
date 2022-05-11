@@ -26,12 +26,13 @@ add_library(MapReduceFramework
         Barrier.h Barrier.cpp
         )
 
-
 set_property(TARGET MapReduceFramework PROPERTY CXX_STANDARD 11)
 target_compile_options(MapReduceFramework PUBLIC -Wall -Wextra)
 target_include_directories(MapReduceFramework PUBLIC ${CMAKE_CURRENT_SOURCE_DIR})
 # link pthreads to your framework
 target_link_libraries(MapReduceFramework PUBLIC Threads::Threads)
+set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -pthread")
 
+add_executable(playing SampleClient/SampleClient.cpp MapReduceFramework.cpp MapReduceFramework.h Barrier.cpp)
 # Add tests
 add_subdirectory(mattanTests)

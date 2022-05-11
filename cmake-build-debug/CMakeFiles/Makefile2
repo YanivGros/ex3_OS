@@ -53,6 +53,7 @@ CMAKE_BINARY_DIR = /home/yaniv123/home/ClionProj/ex3_OS/cmake-build-debug
 # Directory level rules for the build root directory
 
 # The main recursive "all" target.
+all: CMakeFiles/playing.dir/all
 all: CMakeFiles/MapReduceFramework.dir/all
 all: mattanTests/all
 
@@ -64,6 +65,7 @@ preinstall: mattanTests/preinstall
 .PHONY : preinstall
 
 # The main recursive "clean" target.
+clean: CMakeFiles/playing.dir/clean
 clean: CMakeFiles/MapReduceFramework.dir/clean
 clean: mattanTests/clean
 
@@ -149,6 +151,33 @@ mattanTests/googletest-build/googletest/clean: mattanTests/googletest-build/goog
 .PHONY : mattanTests/googletest-build/googletest/clean
 
 #=============================================================================
+# Target rules for target CMakeFiles/playing.dir
+
+# All Build rule for target.
+CMakeFiles/playing.dir/all:
+	$(MAKE) -f CMakeFiles/playing.dir/build.make CMakeFiles/playing.dir/depend
+	$(MAKE) -f CMakeFiles/playing.dir/build.make CMakeFiles/playing.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/yaniv123/home/ClionProj/ex3_OS/cmake-build-debug/CMakeFiles --progress-num=14,15,16,17 "Built target playing"
+.PHONY : CMakeFiles/playing.dir/all
+
+# Build rule for subdir invocation for target.
+CMakeFiles/playing.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/yaniv123/home/ClionProj/ex3_OS/cmake-build-debug/CMakeFiles 4
+	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/playing.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/yaniv123/home/ClionProj/ex3_OS/cmake-build-debug/CMakeFiles 0
+.PHONY : CMakeFiles/playing.dir/rule
+
+# Convenience name for target.
+playing: CMakeFiles/playing.dir/rule
+
+.PHONY : playing
+
+# clean rule for target.
+CMakeFiles/playing.dir/clean:
+	$(MAKE) -f CMakeFiles/playing.dir/build.make CMakeFiles/playing.dir/clean
+.PHONY : CMakeFiles/playing.dir/clean
+
+#=============================================================================
 # Target rules for target CMakeFiles/MapReduceFramework.dir
 
 # All Build rule for target.
@@ -179,9 +208,9 @@ CMakeFiles/MapReduceFramework.dir/clean:
 # Target rules for target mattanTests/CMakeFiles/mattanTester.dir
 
 # All Build rule for target.
-mattanTests/CMakeFiles/mattanTester.dir/all: CMakeFiles/MapReduceFramework.dir/all
 mattanTests/CMakeFiles/mattanTester.dir/all: mattanTests/googletest-build/googletest/CMakeFiles/gtest_main.dir/all
 mattanTests/CMakeFiles/mattanTester.dir/all: mattanTests/googletest-build/googletest/CMakeFiles/gtest.dir/all
+mattanTests/CMakeFiles/mattanTester.dir/all: CMakeFiles/MapReduceFramework.dir/all
 	$(MAKE) -f mattanTests/CMakeFiles/mattanTester.dir/build.make mattanTests/CMakeFiles/mattanTester.dir/depend
 	$(MAKE) -f mattanTests/CMakeFiles/mattanTester.dir/build.make mattanTests/CMakeFiles/mattanTester.dir/build
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/yaniv123/home/ClionProj/ex3_OS/cmake-build-debug/CMakeFiles --progress-num=12,13 "Built target mattanTester"
@@ -208,8 +237,8 @@ mattanTests/CMakeFiles/mattanTester.dir/clean:
 # Target rules for target mattanTests/googletest-build/googlemock/CMakeFiles/gmock_main.dir
 
 # All Build rule for target.
-mattanTests/googletest-build/googlemock/CMakeFiles/gmock_main.dir/all: mattanTests/googletest-build/googlemock/CMakeFiles/gmock.dir/all
 mattanTests/googletest-build/googlemock/CMakeFiles/gmock_main.dir/all: mattanTests/googletest-build/googletest/CMakeFiles/gtest.dir/all
+mattanTests/googletest-build/googlemock/CMakeFiles/gmock_main.dir/all: mattanTests/googletest-build/googlemock/CMakeFiles/gmock.dir/all
 	$(MAKE) -f mattanTests/googletest-build/googlemock/CMakeFiles/gmock_main.dir/build.make mattanTests/googletest-build/googlemock/CMakeFiles/gmock_main.dir/depend
 	$(MAKE) -f mattanTests/googletest-build/googlemock/CMakeFiles/gmock_main.dir/build.make mattanTests/googletest-build/googlemock/CMakeFiles/gmock_main.dir/build
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/yaniv123/home/ClionProj/ex3_OS/cmake-build-debug/CMakeFiles --progress-num=6,7 "Built target gmock_main"
